@@ -10,7 +10,7 @@ public class CamelRoute extends RouteBuilder {
         from("direct:saveToPostgres")
                 .log("Executing SQL query: ${body}")
                 .doTry()
-                .to("jdbc:dataSource")
+                .to("postgres:dataSource")
                 .log("Query execution completed")
                 .doCatch(Exception.class)
                 .log("Error executing query: ${exception.message}")

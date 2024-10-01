@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-@Component("customjdbc")
+@Component("postgres")
 public class PostgresComponent extends DefaultComponent {
 
     public PostgresComponent() {
@@ -18,5 +18,6 @@ public class PostgresComponent extends DefaultComponent {
         PostgresJdbcEndpoint endpoint = new PostgresJdbcEndpoint(uri, this);
         setProperties(endpoint, parameters);
         return endpoint;
+
     }
 }
