@@ -15,7 +15,7 @@ public class QueryController {
     private final ProducerTemplate producerTemplate;
 
     @PostMapping("/send")
-    public void sendMessage(@RequestParam String message) {
+    public void sendMessage(@RequestParam String message) { //TODO: write integration test
         producerTemplate
                 .requestBody("direct:saveToPostgres", message, String.class);
 
